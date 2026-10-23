@@ -1,0 +1,94 @@
+/* Dropdown, alertas, toasts, modais, badges e utilitários do grid de 12 colunas.
+   Carregado por último para complementar components.css e responsive.css. */
+
+/* ---------- Dropdown ---------- */
+.dropdown { position: relative; }
+.dropdown-toggle {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 44px;
+  padding: 10px 14px; border: 0; border-radius: var(--radius-sm);
+  background: transparent; color: inherit; font: inherit; font-weight: 600; cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+.dropdown-toggle::after { content: "▾"; font-size: .8em; }
+.dropdown-toggle:hover, .dropdown-toggle[aria-expanded="true"] {
+  background: var(--color-primary-soft); color: var(--color-primary-hover);
+}
+.dropdown:has([aria-current="page"]) > .dropdown-toggle { background: var(--color-primary); color: var(--color-white); }
+.dropdown-menu {
+  display: none; list-style: none; margin: 0; padding: var(--space-1);
+  min-width: 220px; background: var(--color-white);
+  border: 1px solid var(--color-border); border-radius: var(--radius-md);
+}
+.dropdown-toggle[aria-expanded="true"] + .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; }
+@media (min-width: 768px) {
+  .dropdown-menu { position: absolute; top: calc(100% + 6px); left: 0; z-index: 50; box-shadow: var(--shadow-lg); }
+}
+@media (max-width: 767px) {
+  .dropdown { width: 100%; }
+  .dropdown-toggle { width: 100%; justify-content: space-between; }
+  .dropdown-menu { border: 0; padding: 0 0 0 var(--space-2); }
+}
+
+/* ---------- Alertas ---------- */
+.alerta-info { background: #e8f1fa; border-color: #a8c9e6; color: var(--color-secondary-dark); }
+.alerta-aviso { background: #fff6e0; border-color: #f0d28a; color: #6b4a00; }
+.alerta-erro { background: #fdecea; border-color: #f0b4ae; color: var(--color-danger); }
+
+/* ---------- Toast ---------- */
+.toast {
+  opacity: 0; transform: translateY(12px); pointer-events: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+.toast.visivel { opacity: 1; transform: none; pointer-events: auto; }
+.toast-erro { background: var(--color-danger); }
+
+/* ---------- Badges ---------- */
+.badge-aviso { background: #fff1cc; color: #6b4a00; }
+.badge-info { background: #dcebf7; color: var(--color-secondary-dark); }
+.projeto-categoria + .badge { margin-left: var(--space-1); }
+
+/* ---------- Modal ---------- */
+.modal {
+  position: fixed; inset: 0; z-index: 1100; display: none;
+  align-items: center; justify-content: center; padding: var(--space-2);
+  background: rgba(11, 69, 42, .55);
+}
+.modal.aberto { display: flex; }
+.modal-conteudo {
+  position: relative; width: 100%; max-width: 520px; max-height: 90vh; overflow: auto;
+  padding: var(--space-4); background: var(--color-white);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
+}
+.modal-conteudo h2 { color: var(--color-primary-dark); font-size: var(--font-xl); margin-bottom: var(--space-2); }
+.modal-conteudo p { margin-bottom: var(--space-2); }
+.modal-fechar {
+  position: absolute; top: var(--space-1); right: var(--space-1);
+  width: 44px; height: 44px; border: 0; border-radius: 50%;
+  background: transparent; font-size: 1.6rem; line-height: 1; cursor: pointer; color: var(--color-muted);
+}
+.modal-fechar:hover { background: var(--color-primary-soft); color: var(--color-primary-dark); }
+
+/* ---------- Utilitários ---------- */
+.link-botao {
+  padding: 0; border: 0; background: none; color: var(--color-secondary);
+  font: inherit; text-decoration: underline; cursor: pointer;
+}
+.form-ajuda { margin: var(--space-2) 0; font-size: var(--font-sm); }
+
+/* ---------- Grid de 12 colunas ---------- */
+.grid-12 { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--space-3); }
+.contato-grid.grid-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.col-span-1 { grid-column: span 1; } .col-span-2 { grid-column: span 2; } .col-span-3 { grid-column: span 3; }
+.col-span-4 { grid-column: span 4; } .col-span-5 { grid-column: span 5; } .col-span-6 { grid-column: span 6; }
+.col-span-7 { grid-column: span 7; } .col-span-8 { grid-column: span 8; } .col-span-9 { grid-column: span 9; }
+.col-span-10 { grid-column: span 10; } .col-span-11 { grid-column: span 11; } .col-span-12 { grid-column: span 12; }
+@media (min-width: 600px) {
+  .col-sm-6 { grid-column: span 6; }
+}
+@media (min-width: 768px) {
+  .col-md-4 { grid-column: span 4; } .col-md-6 { grid-column: span 6; } .col-md-8 { grid-column: span 8; }
+}
+@media (min-width: 900px) {
+  .col-lg-3 { grid-column: span 3; } .col-lg-4 { grid-column: span 4; } .col-lg-6 { grid-column: span 6; }
+}
