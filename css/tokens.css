@@ -1,0 +1,38 @@
+/* Projeto Esperança — Design tokens */
+:root {
+  --color-primary: #198754;
+  --color-primary-hover: #11653d;
+  --color-primary-dark: #0b452a;
+  --color-primary-soft: #dff3e8;
+  --color-secondary: #1769aa;
+  --color-secondary-dark: #0d4775;
+  --color-white: #ffffff;
+  --color-background: #f5f7f6;
+  --color-surface: #ffffff;
+  --color-text: #26332d;
+  --color-muted: #6c757d;
+  --color-border: #dce3df;
+  --color-highlight: #ffbf47;
+  --color-danger: #b42318;
+  --color-success: #146c43;
+  --shadow-sm: 0 4px 15px rgba(0,0,0,.08);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,.12);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --font-xs: .75rem;
+  --font-sm: .875rem;
+  --font-md: 1rem;
+  --font-lg: 1.25rem;
+  --font-xl: 1.5rem;
+  --font-2xl: 2rem;
+  --font-3xl: clamp(2rem, 5vw, 3.4rem);
+  --content-width: 1200px;
+  --transition-fast: 180ms ease;
+}
